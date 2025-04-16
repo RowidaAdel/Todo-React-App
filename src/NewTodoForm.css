@@ -1,0 +1,44 @@
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-size: 1em;
+}
+
+ .btn-task{
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 40px;
+  transition: background-color 0.3s;
+}
+
+.btn-task:hover {
+  background-color: var(--hover-primary-color);
+}
+
+.task_item button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 17px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}

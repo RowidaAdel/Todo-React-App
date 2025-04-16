@@ -1,0 +1,229 @@
+:root {
+  --defualt-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --primary-font: "Amatic SC", sans-serif;
+  --secondary-font: "Inter", sans-serif;
+
+  --bg-color: linear-gradient(to right, #fbc2eb, #78a3eb);
+  --bg-todo: linear-gradient(135deg, #f7d8ee, #bed1f3);
+
+  --text-color: #212529;
+
+  --primary-color: #d86cb9;
+  --hover-primary-color: #708bb9;
+  --accent-color: #be7aab;
+
+  --edit-btn-color: #d86cb9;
+  --edit-btn-hover: #972e79;
+  --delete-btn-color: #708bb9;
+  --delete-btn-hover: #3a578a;
+}
+
+.dark-mode {
+  --bg-color: linear-gradient(135deg, #591da9, #051960);
+  --bg-todo: linear-gradient(150deg, #e5c8f3, #4b5d9c);
+
+  --text-color: #212529;
+
+  --primary-color: #6a3e93;
+  --hover-primary-color: #007bff;
+  --accent-color: #7b47a6;
+
+  --edit-btn-color: #4871c4;
+  --edit-btn-hover: #234da1;
+  --delete-btn-color: #8e41a1;
+  --delete-btn-hover: #471453;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--defualt-font);
+}
+
+.todo {
+  max-width: 540px;
+  background: var(--bg-todo);
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.todo h1 {
+  color: rgb(6, 22, 36);
+  font-size: 2.8em;
+  font-family: "Pacifico", cursive;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-size: 1em;
+}
+
+.task_list {
+  list-style: none;
+  padding: 0;
+}
+
+.task_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #f1f1f1;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+}
+
+.task_item span {
+  padding: 10px;
+}
+
+.task_item button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 17px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.edit_btn,
+.dark-mode .edit_btn {
+  background-color: var(--edit-btn-color);
+  color: #fff;
+}
+
+.edit_btn:hover,
+.dark-mode .edit_btn:hover {
+  background-color: var(--edit-btn-hover);
+}
+
+.delete_btn,
+.dark-mode .delete_btn {
+  background-color: var(--delete-btn-color);
+  color: #fff;
+}
+
+.delete_btn:hover,
+.dark-mode .delete_btn:hover {
+  background-color: var(--delete-btn-hover);
+}
+
+.task_item.completed {
+  background-color: #b4bbb4;
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task_item.completed .circle {
+  background-color: #4caf50;
+  color: white;
+}
+
+.circle {
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  margin-right: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task_content {
+  display: flex;
+  align-items: center;
+}
+
+.task_buttons button {
+  border-radius: 30px;
+  border-left: 1px solid #fff;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+#theme-icon {
+  color: #222;
+  animation: pulse 2s infinite;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode #theme-icon {
+  color: #fff;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .todo {
+    max-width: 80%;
+  }
+
+  input {
+    width: 100%;
+    font-size: 0.9em;
+    padding: 8px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+    border-radius: 25px;
+    margin-left: 10px;
+  }
+}
