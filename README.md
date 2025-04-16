@@ -18,11 +18,6 @@ This is a simple To-Do List application built with React. It allows users to add
 - **localStorage**: For saving tasks to the user's browser.
 - **Font Awesome**: For icons (used in the theme toggle button).
 
-## Getting Started
-
-Clone the repository and navigate to the project directory. Then, run the following commands:
-
-### Install Dependencies
 To install the dependencies, run:
 ```bash
 npm install
